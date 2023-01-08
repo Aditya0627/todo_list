@@ -7,7 +7,7 @@ from .models import Task
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView
 # Create your views here.
-
+#there is slight change in the code file
 class CustomLoginView(LoginView):
     template_name = 'base/login.html'
     fields = '__all__'
