@@ -1,0 +1,9 @@
+<h3>Task Form</h3>
+<a href="{%url 'tasks' %}">GO BACK</a>
+<form method="POST" action = "">
+    {% csrf_token %}
+    {{form.as_p}}
+    {% comment %} {{form}}  we can directly use the keyword form to access the model we created {% endcomment %}
+    <input type = "submit" value="Submit">
+
+</form> 
