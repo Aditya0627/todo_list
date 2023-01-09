@@ -3,15 +3,15 @@
 
 
     <p>{{request.user}}</p>
-    <a href="">Logout</a>
+    <a href="{% url 'logout' %}">Logout</a>
 {%else%}
-<a href="">Log In</a>
+<a href="/login">Log In</a>
 
 {% endif%}
 
 
 <hr>
-<h1> MY TO DO LIST</h1>
+<h1> MY TO DO LIST {{color}}</h1>
 <a href="{%url 'task-create'%}">Add Task</a>
 <table>
     <tr>

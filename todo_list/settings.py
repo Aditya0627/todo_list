@@ -110,6 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 #aditya@yahoo.com
+#testuser password test2022
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -123,7 +124,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+LOGIN_URL = 'login'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
