@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<h1>Register</h1>
 
 <form method="POST">
     {% csrf_token %}
@@ -6,4 +6,4 @@
     <input type="submit" value="login">
 </form>
 
-<p>Don't have an account ? <a href="{%url 'register'%}">Resgister</a></p>
+<p>Already have an account ? <a href="{%url 'login'%}">Login</a></p>
