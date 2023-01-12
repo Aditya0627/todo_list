@@ -1,4 +1,7 @@
 
+{% extends 'base/main.html' %}
+{% block content%}
+
 {%if request.user.is_authenticated%}
 
 
@@ -13,6 +16,10 @@
 <hr>
 <h1> MY TO DO LIST {{color}}</h1>
 <a href="{%url 'task-create'%}">Add Task</a>
+<form method="GET">
+    <input type="text" name="search-area" value="{{search_input}}">
+    <input type="submit" value="search">
+</form>
 <table>
     <tr>
         <th>Items</th>
@@ -21,7 +28,7 @@
    {%for task in tasks%}
     <tr>
         <td>{{task.title}}</td>
-        <td><a href="{% url 'task' task.id%}">View</a></td>
+        {% comment %} <td><a href="{% url 'task' task.id%}">View</a></td> {% endcomment %}
         <td><a href="{% url 'task-update' task.id%}">Edit</a></td>
         <td><a href="{% url 'task-delete' task.id%}">Delete</a></td>
 
@@ -30,3 +37,5 @@
     <h3>No items in the list</h3>
    {%endfor%}
 </table>
+
+{% endblock content %}
