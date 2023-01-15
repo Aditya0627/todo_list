@@ -1,4 +1,7 @@
+{% extends 'base/main.html' %}
+{% block content%}
 {% load crispy_forms_tags%}
+
 <h3>Task Form</h3>
 <a href="{%url 'tasks' %}">GO BACK</a>
 <form action="" method="POST">
@@ -10,3 +13,4 @@
     <input type = "submit" value="Submit">
 
 </form> 
+{% endblock content %}
