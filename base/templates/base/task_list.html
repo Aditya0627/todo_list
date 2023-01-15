@@ -28,7 +28,7 @@
    {%for task in tasks%}
     <tr>
         <td>{{task.title}}</td>
-        {% comment %} <td><a href="{% url 'task' task.id%}">View</a></td> {% endcomment %}
+        <td><a href="{% url 'task' task.id%}">View</a></td>
         <td><a href="{% url 'task-update' task.id%}">Edit</a></td>
         <td><a href="{% url 'task-delete' task.id%}">Delete</a></td>
 
