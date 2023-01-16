@@ -57,6 +57,8 @@ class TaskDetail(LoginRequiredMixin,DetailView):
     #will look for html with name model_detail.html
     model = Task
     context_object_name = "tasks_detail"
+    def get_success_url(self):
+        return reverse_lazy('tasks')
     # template_name = 'base/task.html' we can change the name of the html file
 
 class TaskCreate(LoginRequiredMixin,CreateView):
