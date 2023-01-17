@@ -11,6 +11,7 @@ from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 #there is slight change in the code file
+
 class CustomLoginView(LoginView):
     template_name = 'base/login.html'
     fields = '__all__'

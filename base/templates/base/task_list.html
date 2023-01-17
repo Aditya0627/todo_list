@@ -2,10 +2,15 @@
 {% extends 'base/main.html' %}
 {% block content%}
 
-{%if request.user.is_authenticated%}
+
+<div class="header-bar">
+    <div>
+        <h1>Hello {{request.user|title}}</h1>
+        <h3 style="margin:0">You have <i>{{count}}</i> incomplete task{{count|pluralize:"s"}}</h3>
+    </div>
+    {%if request.user.is_authenticated%}
 
 
-    <p>{{request.user}}</p>
     <a href="{% url 'logout' %}">Logout</a>
 {%else%}
 <a href="/login">Log In</a>
@@ -13,13 +18,33 @@
 {% endif %}
 
 
-<hr>
+</div>
+
+
+
+{% comment %} <hr>
 <h1> MY TO DO LIST {{color}}</h1>
 <a href="{%url 'task-create'%}">Add Task</a>
 <form method="GET">
     <input type="text" name="search-area" value="{{search_input}}">
     <input type="submit" value="search">
-</form>
+</form> {% endcomment %}
+
+<div class="task-items-wrapper">
+    {% for task in tasks %}
+    <div class="task-wrapper">
+    {% if task.complete %}
+    <div class="task-title">
+    <div class="task-complete-icon"></div>
+    <i><s><a href="{% url 'task-update' task.id%}">{{task}}</a></s></i>
+    </div>
+    {% endif %}
+    </div>
+    {% empty %}
+    <h3>No items in the list</h3>
+   {% endfor %}
+</div>
+
 <table>
     <tr>
         <th>Items</th>
