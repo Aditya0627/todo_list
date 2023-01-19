@@ -1,15 +1,19 @@
 {% extends 'base/main.html' %}
 {% block content%}
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
 
-<h3>Task Form</h3>
-<a href="{%url 'tasks' %}">GO BACK</a>
-<form action="" method="POST">
-    {% csrf_token %}
-    {% comment %} {{form|crispy}}
-     {% endcomment %}
-    {{form.as_p}}
-    {% comment %} {{form}}  we can directly use the keyword form to access the model we created {% endcomment %}
-    <input type = "submit" value="Submit">
+<div class="card-body">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% comment %} {{form|crispy}}
+         {% endcomment %}
+        {{form.as_p}}
+        {% comment %} {{form}}  we can directly use the keyword form to access the model we created {% endcomment %}
+        <input class="button" type = "submit" value="Submit">
+    
+    </form> 
+</div>
 
-</form> 
 {% endblock content %}
